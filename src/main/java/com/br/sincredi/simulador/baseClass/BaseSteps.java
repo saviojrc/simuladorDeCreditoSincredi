@@ -17,35 +17,11 @@ public class BaseSteps extends BasePage {
 
 	public static Scenario scenario;
 
-	public static void navegatePage(String url) {
+	
 
-		try {
-			getDriver().navigate().to(url);
-			getDriver().manage().window().maximize();
+	
 
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			throw new IllegalArgumentException(e.getMessage());
-		}
-
-	}
-
-	public static void closeBrowser() {
-
-		try {
-
-			getDriver().quit();
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			throw new IllegalArgumentException(e.getMessage());
-		}
-
-	}
-
-	public static void screenShotNow() {
+	public  void screenShotNow() {
 		try {
 			byte[] screenshot = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BYTES);
 			scenario.embed(screenshot, "image/png");
@@ -255,11 +231,6 @@ public class BaseSteps extends BasePage {
 
 	}
 
-	public void MoveToElementPage(String strProperty, String strValue) {
-		By by = TipoDeElementoByEnum.getTipoDeElemento(strProperty, strValue);
-		WebElement objhtmlWebElement = getWebElement(by);
-		getJS().executeScript("arguments[0].scrollIntoView(true);", objhtmlWebElement);
-	}
 
 	public void clearText(String strProperty, String strValue) {
 

@@ -21,3 +21,17 @@ Cenario: Simular um investimento na poupança como pessoa fisica
     E o valor de "R$ 25.723" investidos em "48" meses na terceira linha da tabela de referência 
     E o valor de "R$ 32.121" investidos em "60" meses na quarta linha da tabela de referência 
     E a opção para  "Refazer investimento"
+    
+   
+
+@InformarUmValorParaOInvestimentoInferiorAoPermitido
+Cenario: Simular um investimento na poupança como pessoa física com um valor inferior há R$20.00
+    Dado a disponibilização do preenchimento do formulário de simulação na poupança
+    Quando for escolhido o perfil "Para Você"
+    E ao informar o valor de investimento inicial igual a R$: "19.00"
+    E ao informar o valor de investimento mensal igual a R$: "19.00"
+    E informar o período mensal de aplicação igual a "12" meses
+    E selecionar a opção "Simular"
+    Então a mensagem "Valor mínimo de 20.00" para o investimento inicial
+  	E a mensagem "Valor mínimo de 20.00" para o investimento final
+     

@@ -7,12 +7,14 @@ import com.br.sincredi.simulador.pages.SimulationResultPage;
 import com.br.sincredi.simulador.pages.enums.InvestmentFormEnum;
 import com.br.sincredi.simulador.pages.enums.InvestmentProfileTypeEnum;
 import com.br.sincredi.simulador.pages.enums.InvestmentSimulationTableEnum;
+import com.br.sincredi.simulador.pages.enums.MessageEnum;
 import com.br.sincredi.simulador.pages.enums.OptionsSimulatorEnum;
 import com.br.sincredi.simulador.pages.enums.PageEnum;
 import com.br.sincredi.simulador.pages.enums.SimulationResultEnum;
 
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
+import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
 
 public class InvestmentSimulatorSteps {
@@ -68,19 +70,23 @@ public class InvestmentSimulatorSteps {
 	@Entao("^o valor de \"([^\"]*)\" investidos em \"([^\"]*)\" meses na primeira linha da tabela de referência$")
 	public void oValorDeInvestidosEmMesesNaPrimeiraLinhaDaTabelaDeReferência(String arg1, String arg2)
 			throws Throwable {
-		String tempoAtualInvestimentoLinhaUm= resultadoSimulacaoInvestimento.getInvestmentTimeValue(InvestmentSimulationTableEnum.Line_One);
-		String valorAtualInvestimentoLinhaUm = resultadoSimulacaoInvestimento.getInvestedCapitalListValue(InvestmentSimulationTableEnum.Line_One);
-		
+		String tempoAtualInvestimentoLinhaUm = resultadoSimulacaoInvestimento
+				.getInvestmentTimeValue(InvestmentSimulationTableEnum.Line_One);
+		String valorAtualInvestimentoLinhaUm = resultadoSimulacaoInvestimento
+				.getInvestedCapitalListValue(InvestmentSimulationTableEnum.Line_One);
+
 		BaseVerificationPoint.verificationPointConditionalString(tempoAtualInvestimentoLinhaUm.trim(), arg2.trim());
 		BaseVerificationPoint.verificationPointConditionalString(valorAtualInvestimentoLinhaUm.trim(), arg1.trim());
-		
+
 	}
 
 	@Entao("^o valor de \"([^\"]*)\" investidos em \"([^\"]*)\" meses na segunda linha da tabela de referência$")
 	public void oValorDeInvestidosEmMesesNaSegundaLinhaDaTabelaDeReferência(String arg1, String arg2) throws Throwable {
-		String tempoAtualInvestimentoLinhaDois= resultadoSimulacaoInvestimento.getInvestmentTimeValue(InvestmentSimulationTableEnum.Line_Two);
-		String valorAtualInvestimentoLinhaDois = resultadoSimulacaoInvestimento.getInvestedCapitalListValue(InvestmentSimulationTableEnum.Line_Two);
-		
+		String tempoAtualInvestimentoLinhaDois = resultadoSimulacaoInvestimento
+				.getInvestmentTimeValue(InvestmentSimulationTableEnum.Line_Two);
+		String valorAtualInvestimentoLinhaDois = resultadoSimulacaoInvestimento
+				.getInvestedCapitalListValue(InvestmentSimulationTableEnum.Line_Two);
+
 		BaseVerificationPoint.verificationPointConditionalString(tempoAtualInvestimentoLinhaDois.trim(), arg2.trim());
 		BaseVerificationPoint.verificationPointConditionalString(valorAtualInvestimentoLinhaDois.trim(), arg1.trim());
 	}
@@ -88,19 +94,23 @@ public class InvestmentSimulatorSteps {
 	@Entao("^o valor de \"([^\"]*)\" investidos em \"([^\"]*)\" meses na terceira linha da tabela de referência$")
 	public void oValorDeInvestidosEmMesesNaTerceiraLinhaDaTabelaDeReferência(String arg1, String arg2)
 			throws Throwable {
-		
-		String tempoAtualInvestimentoLinhaTres= resultadoSimulacaoInvestimento.getInvestmentTimeValue(InvestmentSimulationTableEnum.Line_Three);
-		String valorAtualInvestimentoLinhaTres = resultadoSimulacaoInvestimento.getInvestedCapitalListValue(InvestmentSimulationTableEnum.Line_Three);
-		
+
+		String tempoAtualInvestimentoLinhaTres = resultadoSimulacaoInvestimento
+				.getInvestmentTimeValue(InvestmentSimulationTableEnum.Line_Three);
+		String valorAtualInvestimentoLinhaTres = resultadoSimulacaoInvestimento
+				.getInvestedCapitalListValue(InvestmentSimulationTableEnum.Line_Three);
+
 		BaseVerificationPoint.verificationPointConditionalString(tempoAtualInvestimentoLinhaTres.trim(), arg2.trim());
 		BaseVerificationPoint.verificationPointConditionalString(valorAtualInvestimentoLinhaTres.trim(), arg1.trim());
 	}
 
 	@Entao("^o valor de \"([^\"]*)\" investidos em \"([^\"]*)\" meses na quarta linha da tabela de referência$")
 	public void oValorDeInvestidosEmMesesNaQuartaLinhaDaTabelaDeReferência(String arg1, String arg2) throws Throwable {
-		String tempoAtualInvestimentoLinhaQuatro= resultadoSimulacaoInvestimento.getInvestmentTimeValue(InvestmentSimulationTableEnum.Line_Four);
-		String valorAtualInvestimentoLinhaQuatro = resultadoSimulacaoInvestimento.getInvestedCapitalListValue(InvestmentSimulationTableEnum.Line_Four);
-		
+		String tempoAtualInvestimentoLinhaQuatro = resultadoSimulacaoInvestimento
+				.getInvestmentTimeValue(InvestmentSimulationTableEnum.Line_Four);
+		String valorAtualInvestimentoLinhaQuatro = resultadoSimulacaoInvestimento
+				.getInvestedCapitalListValue(InvestmentSimulationTableEnum.Line_Four);
+
 		BaseVerificationPoint.verificationPointConditionalString(tempoAtualInvestimentoLinhaQuatro.trim(), arg2.trim());
 		BaseVerificationPoint.verificationPointConditionalString(valorAtualInvestimentoLinhaQuatro.trim(), arg1.trim());
 	}
@@ -110,4 +120,45 @@ public class InvestmentSimulatorSteps {
 		verificarPagina.checkCurrentPage(PageEnum.Simulation_Result);
 		verificarPagina.checkButton(OptionsSimulatorEnum.Clear_Formulario);
 	}
+
+	@Dado("^a disponibilização do preenchimento do formulário de simulação na poupança$")
+	public void aDisponibilizaçãoDoPreenchimentoDoFormulárioDeSimulaçãoNaPoupança() throws Throwable {
+		verificarPagina.checkCurrentPage(PageEnum.Investment_Form);
+	}
+
+	@Quando("^for escolhido o perfil \"([^\"]*)\"$")
+	public void forEscolhidoOPerfil(String arg1) throws Throwable {
+		formularioDeInvestimento.informInvestmentProfile(InvestmentProfileTypeEnum.For_You);
+	}
+
+	@Quando("^ao informar o valor de investimento inicial igual a R\\$: \"([^\"]*)\"$")
+	public void aoInformarOValorDeInvestimentoInicialIgualAR$(String arg1) throws Throwable {
+		formularioDeInvestimento.fillTextField(InvestmentFormEnum.Initial_Value_Investment, arg1);
+	}
+
+	@Quando("^ao informar o valor de investimento mensal igual a R\\$: \"([^\"]*)\"$")
+	public void aoInformarOValorDeInvestimentoMensalIgualAR$(String arg1) throws Throwable {
+		formularioDeInvestimento.fillTextField(InvestmentFormEnum.Monthly_Investment_Value, arg1);
+	}
+
+	@Quando("^informar o período mensal de aplicação igual a \"([^\"]*)\" meses$")
+	public void informarOPeríodoMensalDeAplicaçãoIgualAMeses(String arg1) throws Throwable {
+		formularioDeInvestimento.fillTextField(InvestmentFormEnum.Investment_Frequency, arg1);
+	}
+
+	@Quando("^selecionar a opção \"([^\"]*)\"$")
+	public void selecionarAOpção(String arg1) throws Throwable {
+		formularioDeInvestimento.selectFormOption(OptionsSimulatorEnum.Simulate);
+	}
+
+	@Então("^a mensagem \"([^\"]*)\" para o investimento inicial$")
+	public void aMensagemParaOInvestimentoInicial(String arg1) throws Throwable {
+		verificarPagina.checkMessage(MessageEnum.Invalid_Initial_Value_Message, arg1);
+	}
+
+	@Então("^a mensagem \"([^\"]*)\" para o investimento final$")
+	public void aMensagemParaOInvestimentoFinal(String arg1) throws Throwable {
+		verificarPagina.checkMessage(MessageEnum.Invalid_Monthly_Amount_Message, arg1);
+	}
+
 }

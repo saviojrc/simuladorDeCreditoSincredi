@@ -19,7 +19,7 @@ formatter.feature({
   ]
 });
 formatter.before({
-  "duration": 9410549700,
+  "duration": 8729758700,
   "status": "passed"
 });
 formatter.scenario({
@@ -105,7 +105,7 @@ formatter.match({
   "location": "InvestmentSimulatorSteps.aDisponibilizaçãoDaSimulaçãoDeUmInvestimentoNaPoupançaComoPessoaFísica()"
 });
 formatter.result({
-  "duration": 198311700,
+  "duration": 191837600,
   "status": "passed"
 });
 formatter.match({
@@ -118,7 +118,7 @@ formatter.match({
   "location": "InvestmentSimulatorSteps.éSelecionadoOPerfil(String)"
 });
 formatter.result({
-  "duration": 327751200,
+  "duration": 364357900,
   "status": "passed"
 });
 formatter.match({
@@ -131,7 +131,7 @@ formatter.match({
   "location": "InvestmentSimulatorSteps.aoInformarOValorInicialDeInvestimentoIgualAR$(String)"
 });
 formatter.result({
-  "duration": 228528800,
+  "duration": 155309100,
   "status": "passed"
 });
 formatter.match({
@@ -144,7 +144,7 @@ formatter.match({
   "location": "InvestmentSimulatorSteps.aoInformarOValorQueDeveSerPoupandoTodoMêsDe(String)"
 });
 formatter.result({
-  "duration": 116801700,
+  "duration": 115680800,
   "status": "passed"
 });
 formatter.match({
@@ -157,7 +157,7 @@ formatter.match({
   "location": "InvestmentSimulatorSteps.preencherOPeríodoMensalDeAplicaçãoIgualAMeses(String)"
 });
 formatter.result({
-  "duration": 109638400,
+  "duration": 93512600,
   "status": "passed"
 });
 formatter.match({
@@ -170,7 +170,7 @@ formatter.match({
   "location": "InvestmentSimulatorSteps.selecionarAFuncionalidade(String)"
 });
 formatter.result({
-  "duration": 309027400,
+  "duration": 303798200,
   "status": "passed"
 });
 formatter.match({
@@ -183,7 +183,7 @@ formatter.match({
   "location": "InvestmentSimulatorSteps.éRetornadoAMensagem(String)"
 });
 formatter.result({
-  "duration": 130937700,
+  "duration": 98346400,
   "status": "passed"
 });
 formatter.match({
@@ -196,7 +196,7 @@ formatter.match({
   "location": "InvestmentSimulatorSteps.oValorTotalDeQueSeráInvestidoAtéOFimDoPeríodo(String)"
 });
 formatter.result({
-  "duration": 85213000,
+  "duration": 85855700,
   "status": "passed"
 });
 formatter.match({
@@ -213,7 +213,7 @@ formatter.match({
   "location": "InvestmentSimulatorSteps.oValorDeInvestidosEmMesesNaPrimeiraLinhaDaTabelaDeReferência(String,String)"
 });
 formatter.result({
-  "duration": 148305900,
+  "duration": 144794000,
   "status": "passed"
 });
 formatter.match({
@@ -230,7 +230,7 @@ formatter.match({
   "location": "InvestmentSimulatorSteps.oValorDeInvestidosEmMesesNaSegundaLinhaDaTabelaDeReferência(String,String)"
 });
 formatter.result({
-  "duration": 128085500,
+  "duration": 123071400,
   "status": "passed"
 });
 formatter.match({
@@ -247,7 +247,7 @@ formatter.match({
   "location": "InvestmentSimulatorSteps.oValorDeInvestidosEmMesesNaTerceiraLinhaDaTabelaDeReferência(String,String)"
 });
 formatter.result({
-  "duration": 114941000,
+  "duration": 115495700,
   "status": "passed"
 });
 formatter.match({
@@ -264,7 +264,7 @@ formatter.match({
   "location": "InvestmentSimulatorSteps.oValorDeInvestidosEmMesesNaQuartaLinhaDaTabelaDeReferência(String,String)"
 });
 formatter.result({
-  "duration": 107788600,
+  "duration": 140661500,
   "status": "passed"
 });
 formatter.match({
@@ -277,11 +277,171 @@ formatter.match({
   "location": "InvestmentSimulatorSteps.aOpçãoPara(String)"
 });
 formatter.result({
-  "duration": 76405200,
+  "duration": 58046900,
   "status": "passed"
 });
 formatter.after({
-  "duration": 2507547100,
+  "duration": 2146660500,
+  "status": "passed"
+});
+formatter.before({
+  "duration": 7313934700,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 28,
+  "name": "Simular um investimento na poupança como pessoa física com um valor inferior há R$20.00",
+  "description": "",
+  "id": "simular-um-investimento-na-poupança;simular-um-investimento-na-poupança-como-pessoa-física-com-um-valor-inferior-há-r$20.00",
+  "type": "scenario",
+  "keyword": "Cenario",
+  "tags": [
+    {
+      "line": 27,
+      "name": "@InformarUmValorParaOInvestimentoInferiorAoPermitido"
+    }
+  ]
+});
+formatter.step({
+  "line": 29,
+  "name": "a disponibilização do preenchimento do formulário de simulação na poupança",
+  "keyword": "Dado "
+});
+formatter.step({
+  "line": 30,
+  "name": "for escolhido o perfil \"Para Você\"",
+  "keyword": "Quando "
+});
+formatter.step({
+  "line": 31,
+  "name": "ao informar o valor de investimento inicial igual a R$: \"19.00\"",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 32,
+  "name": "ao informar o valor de investimento mensal igual a R$: \"19.00\"",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 33,
+  "name": "informar o período mensal de aplicação igual a \"12\" meses",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 34,
+  "name": "selecionar a opção \"Simular\"",
+  "keyword": "E "
+});
+formatter.step({
+  "line": 35,
+  "name": "a mensagem \"Valor mínimo de 20.00\" para o investimento inicial",
+  "keyword": "Então "
+});
+formatter.step({
+  "line": 36,
+  "name": "a mensagem \"Valor mínimo de 20.00\" para o investimento final",
+  "keyword": "E "
+});
+formatter.match({
+  "location": "InvestmentSimulatorSteps.aDisponibilizaçãoDoPreenchimentoDoFormulárioDeSimulaçãoNaPoupança()"
+});
+formatter.result({
+  "duration": 78123900,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Para Você",
+      "offset": 24
+    }
+  ],
+  "location": "InvestmentSimulatorSteps.forEscolhidoOPerfil(String)"
+});
+formatter.result({
+  "duration": 273158600,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "19.00",
+      "offset": 57
+    }
+  ],
+  "location": "InvestmentSimulatorSteps.aoInformarOValorDeInvestimentoInicialIgualAR$(String)"
+});
+formatter.result({
+  "duration": 118858200,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "19.00",
+      "offset": 56
+    }
+  ],
+  "location": "InvestmentSimulatorSteps.aoInformarOValorDeInvestimentoMensalIgualAR$(String)"
+});
+formatter.result({
+  "duration": 140730200,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "12",
+      "offset": 48
+    }
+  ],
+  "location": "InvestmentSimulatorSteps.informarOPeríodoMensalDeAplicaçãoIgualAMeses(String)"
+});
+formatter.result({
+  "duration": 107199400,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Simular",
+      "offset": 20
+    }
+  ],
+  "location": "InvestmentSimulatorSteps.selecionarAOpção(String)"
+});
+formatter.result({
+  "duration": 300909500,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Valor mínimo de 20.00",
+      "offset": 12
+    }
+  ],
+  "location": "InvestmentSimulatorSteps.aMensagemParaOInvestimentoInicial(String)"
+});
+formatter.result({
+  "duration": 63585500,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Valor mínimo de 20.00",
+      "offset": 12
+    }
+  ],
+  "location": "InvestmentSimulatorSteps.aMensagemParaOInvestimentoFinal(String)"
+});
+formatter.result({
+  "duration": 44059700,
+  "status": "passed"
+});
+formatter.after({
+  "duration": 2003996000,
   "status": "passed"
 });
 });

@@ -25,7 +25,6 @@ public class SimulationResultPage extends BaseSteps {
 	 **/
 
 	public String getInvestmentTimeValue(InvestmentSimulationTableEnum field) {
-		MoveToElementPage(field.getStrTypeTime(), field.getStrPropTime());
 		waintVisibilityOfElementLocated(field.getStrTypeTime(), field.getStrPropTime());
 		waintPresenceOfElementLocated(field.getStrTypeTime(), field.getStrPropTime());
 		return getPropertyObject(field.getStrTypeTime(), field.getStrPropTime(), "innerText").trim();

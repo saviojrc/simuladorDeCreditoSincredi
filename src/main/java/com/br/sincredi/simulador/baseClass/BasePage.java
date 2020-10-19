@@ -15,9 +15,9 @@ import com.br.sincredi.simulador.support.Utilities;
 
 public class BasePage {
 
-	private static WebDriver driver = getDriver();
+	private static WebDriver driver;
 	private static Integer TIME_OUT = 10;
-	private static JavascriptExecutor JS = ((JavascriptExecutor) driver);
+	private static JavascriptExecutor js = ((JavascriptExecutor) driver);
 
 	public void waintPresenceOfElementLocated(String strProperty, String strValue) {
 		try {
@@ -35,6 +35,10 @@ public class BasePage {
 				e1.printStackTrace();
 			}
 		}
+	}
+
+	public  JavascriptExecutor getJS() {
+		return js;
 	}
 
 	public static void sleep(int segundos) {
@@ -99,12 +103,39 @@ public class BasePage {
 	}
 
 	public WebElement getWebElement(By by) {
-		WebElement objhtmlWebElement = getDriver().findElement(by);
+		WebElement objhtmlWebElement = driver.findElement(by);
 		return objhtmlWebElement;
 	}
+	
+	public  void navegatePage(String url) {
 
-	public static JavascriptExecutor getJS() {
-		return JS;
+		try {
+			getDriver().navigate().to(url);
+			getDriver().manage().window().maximize();
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new IllegalArgumentException(e.getMessage());
+		}
+
+	}
+	
+	public  void closeBrowser() {
+
+		try {
+
+			if(driver!=null ) {
+				driver.quit();
+				driver=null;
+			}
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			throw new IllegalArgumentException(e.getMessage());
+		}
+
 	}
 
 	public static synchronized WebDriver getDriver() {
@@ -114,12 +145,14 @@ public class BasePage {
 			String driverFirefox = Utilities.getParameter("WEBDRIVER_FIREFOX");
 			String pathFirefox = Utilities.getParameter("PATH_DRIVER_FIREFOX");
 			System.setProperty(driverFirefox, pathFirefox);
-
-			if (driver == null) {
+			
+			if(driver==null) {
 				driver = new FirefoxDriver();
 			}
-
+			
 			return driver;
+			
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();

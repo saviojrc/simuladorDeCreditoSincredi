@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="13.999833">
-<testcase classname="Simular um Investimento na Poupança" name="Simular um investimento na poupança como pessoa fisica" time="13.999833">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="23.311743">
+<testcase classname="Simular um Investimento na Poupança" name="Simular um investimento na poupança como pessoa fisica" time="12.867187">
 <system-out><![CDATA[Dado a disponibilização da simulação de um investimento na poupança como pessoa física.passed
 Quando é selecionado o perfil "Para Você"...................................passed
 E ao informar o valor inicial de investimento igual a R$: "1000.00".........passed
@@ -14,6 +14,17 @@ E o valor de "R$ 19.413" investidos em "36" meses na segunda linha da tabela de 
 E o valor de "R$ 25.723" investidos em "48" meses na terceira linha da tabela de referência.passed
 E o valor de "R$ 32.121" investidos em "60" meses na quarta linha da tabela de referência.passed
 E a opção para  "Refazer investimento"......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Simular um Investimento na Poupança" name="Simular um investimento na poupança como pessoa física com um valor inferior há R$20.00" time="10.444556">
+<system-out><![CDATA[Dado a disponibilização do preenchimento do formulário de simulação na poupança.passed
+Quando for escolhido o perfil "Para Você"...................................passed
+E ao informar o valor de investimento inicial igual a R$: "19.00"...........passed
+E ao informar o valor de investimento mensal igual a R$: "19.00"............passed
+E informar o período mensal de aplicação igual a "12" meses.................passed
+E selecionar a opção "Simular"..............................................passed
+Então a mensagem "Valor mínimo de 20.00" para o investimento inicial........passed
+E a mensagem "Valor mínimo de 20.00" para o investimento final..............passed
 ]]></system-out>
 </testcase>
 </testsuite>

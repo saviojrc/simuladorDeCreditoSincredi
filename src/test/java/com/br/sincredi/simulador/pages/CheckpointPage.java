@@ -2,6 +2,7 @@ package com.br.sincredi.simulador.pages;
 
 import com.br.sincredi.simulador.baseClass.BaseSteps;
 import com.br.sincredi.simulador.baseClass.BaseVerificationPoint;
+import com.br.sincredi.simulador.pages.enums.MessageEnum;
 import com.br.sincredi.simulador.pages.enums.OptionsSimulatorEnum;
 import com.br.sincredi.simulador.pages.enums.PageEnum;
 
@@ -18,8 +19,17 @@ public class CheckpointPage extends BaseSteps {
 		waintElementisEnable(option.getStrType(), option.getStrProp());
 		waintPresenceOfElementLocated(option.getStrType(), option.getStrProp());
 		triggerDowmKey();
-		MoveToElementPage(option.getStrType(), option.getStrProp());
-		BaseVerificationPoint.verificationPointConditional(true, verifyIsEnabled(option.getStrType(), option.getStrProp()));
+		BaseVerificationPoint.verificationPointConditional(true,
+				verifyIsEnabled(option.getStrType(), option.getStrProp()));
+	}
+
+	public void checkMessage(MessageEnum message, String expectedMessage ) {
+		waintElementisEnable(message.getStrType(), message.getStrProp());
+		waintPresenceOfElementLocated(message.getStrType(), message.getStrProp());
+		
+		String currentMessage = getPropertyObject(message.getStrType(), message.getStrProp(), "innerText").trim();
+		
+		BaseVerificationPoint.verificationPointConditionalString(currentMessage, expectedMessage.trim());
 	}
 
 }
