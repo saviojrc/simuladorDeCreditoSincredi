@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="13.999833">
+<testcase classname="Simular um Investimento na Poupança" name="Simular um investimento na poupança como pessoa fisica" time="13.999833">
+<system-out><![CDATA[Dado a disponibilização da simulação de um investimento na poupança como pessoa física.passed
+Quando é selecionado o perfil "Para Você"...................................passed
+E ao informar o valor inicial de investimento igual a R$: "1000.00".........passed
+E ao informar o valor que deve ser poupando todo mês de "500.00"............passed
+E preencher o período mensal de aplicação igual a "12" meses................passed
+E selecionar a funcionalidade "Simular".....................................passed
+Entao é retornado a mensagem "Em 12 meses você terá guardado"...............passed
+E o valor total de "R$ 7.052" que será investido até o fim do período.......passed
+E o valor de "R$ 13.190" investidos em "24" meses na primeira linha da tabela de referência.passed
+E o valor de "R$ 19.413" investidos em "36" meses na segunda linha da tabela de referência.passed
+E o valor de "R$ 25.723" investidos em "48" meses na terceira linha da tabela de referência.passed
+E o valor de "R$ 32.121" investidos em "60" meses na quarta linha da tabela de referência.passed
+E a opção para  "Refazer investimento"......................................passed
+]]></system-out>
+</testcase>
+</testsuite>
